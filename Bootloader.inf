@@ -1,0 +1,30 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = Bootloader
+  FILE_GUID                      = 6987936E-ED34-44db-AE97-1FA5E4ED21ac
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = BootMain
+
+[Sources]
+  Bootloader.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  PcdLib
+  BaseLib
+  BaseMemoryLib
+  DebugLib
+
+[Protocols]
+  gEfiLoadedImageProtocolGuid
+  gEfiDevicePathToTextProtocolGuid
+  gEfiSimpleFileSystemProtocolGuid
+  gEfiEdidActiveProtocolGuid
+  gEfiEdidDiscoveredProtocolGuid
+  gEfiEdidOverrideProtocolGuid
